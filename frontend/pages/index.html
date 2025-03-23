@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Event Booking</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Sign Up Form -->
+        <div class="form-box" id="signup-form">
+            <h2>Sign Up</h2>
+            <input type="text" id="signup-username" placeholder="Username" required>
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button onclick="signup()">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="showLoginForm()">Login</a></p>
+            <p id="signup-error" class="error-message"></p>
+            <p><a href="#" onclick="showAdminLogin()">Admin Login</a></p>
+        </div>
+
+        <!-- User Login Form -->
+        <div class="form-box hidden" id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showSignupForm()">Sign up</a></p>
+            <p><a href="#" onclick="showAdminLogin()">Admin Login</a></p>
+            <p id="login-error" class="error-message"></p>
+        </div>
+
+        <!-- Admin Login Form -->
+        <div class="form-box hidden" id="admin-login-form">
+            <h2>Admin Login</h2>
+            <input type="text" id="admin-username" placeholder="Admin Username" required>
+            <input type="password" id="admin-password" placeholder="Admin Password" required>
+            <button onclick="adminLogin()">Login as Admin</button>
+            <p>Not an admin? <a href="#" onclick="showLoginForm()">User Login</a></p>
+            <p id="admin-error" class="error-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <script defer src="admin.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <ul class="menu">
+            <li onclick="showSection('add-event')">➕ Add Event</li>
+            <li onclick="showSection('manage-events')">📋 Manage Events</li>
+            <li onclick="logout()">🚪 Logout</li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>Welcome Admin!</h1>
+
+        <!-- Add Event Section -->
+        <div id="add-event" class="section active">
+            <h2>Add Event</h2>
+            <input type="text" id="event-name" placeholder="Enter Event Name">
+            <input type="number" id="event-capacity" placeholder="Enter Capacity">
+            <input type="date" id="event-date">
+            <input type="time" id="event-time">
+            <input type="text" id="event-venue" placeholder="Enter Venue">
+            <button onclick="addEvent()">Add Event</button>
+        </div>
+
+        <!-- Manage Events Section -->
+        <div id="manage-events" class="section">
+            <h2>Manage Events</h2>
+            <ul id="event-list"></ul>
+        </div>
+    </div>
+</body>
+</html>

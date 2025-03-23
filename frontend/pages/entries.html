@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Entries</title>
+    <link rel="stylesheet" href="entries.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <h1>Your Entries</h1>
+    </header>
+
+    <nav id="menu">
+        <ul>
+            <li><a id="upcoming-events">Upcoming Events</a></li>
+            <li><a id="live-events">Live Events</a></li>
+            <li><a id="completed-events">Completed Events</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+ 
+
+    <div id="entries-container">
+        <h2>Registered Events</h2>
+        <div id="entries-list"></div>
+    </div>
+
+    <script src="entries.js"></script>
+</body>
+</html>

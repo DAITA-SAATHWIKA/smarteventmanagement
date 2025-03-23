@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
+            <ul>
+                <li><a href="upcoming-events.html">Upcoming Events</a></li>
+                <li><a href="live-events.html">Live Events</a></li>
+                <li><a href="completed-events.html">Completed Events</a></li>
+                <li><a href="entries.html">Your Entries</a></li>
+                <li><a href="index.html" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Welcome to Event Booking</h1>
+        <div id="events-container">
+            <!-- Events will be dynamically loaded here -->
+        </div>
+    </main>
+
+    <div id="seating-modal" class="modal">
+        <div class="modal-content">
+            <h2>Select Your Seating Area</h2>
+            <p id="selected-event"></p>
+            <label>
+                <input type="radio" name="seating" value="VIP Area"> VIP Area
+            </label>
+            <label>
+                <input type="radio" name="seating" value="General Ticket"> General Ticket
+            </label>
+            <label>
+                <input type="radio" name="seating" value="Backstage Ticket"> Backstage Ticket
+            </label>
+            <br>
+            <button onclick="confirmRegistration()">Confirm</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>

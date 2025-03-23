@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <link rel="stylesheet" href="entries.css">
+</head>
+<body>
+    <header>
+        <h1>Upcoming Events</h1>
+    </header>
+
+    <div id="entries-container">
+        <div id="entries-list"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let entries = JSON.parse(localStorage.getItem("entries")) || [];
+            let currentTime = new Date();
+            let upcomingEvents = [];
+
+            entries.forEach(event => {
+                let eventDateTime = new Date(`${event.date} ${event.time}`);
+                if (eventDateTime > currentTime) {
+                    upcomingEvents.push(event);
+                }
+            });
+
+            let entriesContainer = document.getElementById("entries-list");
+            entriesContainer.innerHTML = "";
+
+            if (upcomingEvents.length === 0) {
+                entriesContainer.innerHTML = "<p>No upcoming events.</p>";
+                return;
+            }
+
+            upcomingEvents.forEach(event => {
+                let entryDiv = document.createElement("div");
+                entryDiv.classList.add("entry");
+                entryDiv.innerHTML = `
+                    <h3>Event: ${event.eventName || "N/A"}</h3>
+                    <p><strong>Date:</strong> ${event.date || "N/A"}</p>
+                    <p><strong>Time:</strong> ${event.time || "N/A"}</p>
+                    <p><strong>Venue:</strong> ${event.venue || "N/A"}</p>
+                    <p><strong>Seating Area:</strong> ${event.seatingArea || "N/A"}</p>
+                `;
+                entriesContainer.appendChild(entryDiv);
+            });
+        });
+    </script>
+</body>
+</html>
