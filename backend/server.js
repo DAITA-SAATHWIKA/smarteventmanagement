@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 });
 
 // Login route
-app.post('/login', (req, res) => {
+app.post('/index', (req, res) => {
     const { username, password } = req.body;
 
     // Check if the user is admin
